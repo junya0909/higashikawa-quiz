@@ -63,6 +63,14 @@
 #push-button3 {
   margin-top: 50px;
   color: #000000;
+  font-size: 32px;
+  font-family: 'HGP行書体';
+  border-radius: 30px;
+}
+
+#push-button4 {
+  margin-top: 50px;
+  color: #000000;
   margin-bottom: 400px;
   font-size: 32px;
   font-family: 'HGP行書体';
@@ -188,7 +196,7 @@ span {
 /* 一字決まり札 page4~9.htmlのCSS ーーーーーーーーーーーーーー*/
 
 .content {
-  background-image: url(../img/人物背景.jpg);
+  background-image: url(../img/背景４.jpg);
   background-size: cover;
 }
 
@@ -315,7 +323,7 @@ span {
 /* 面白い覚え札 page_A1～A8のCSS----------------------------- */
 
 .content_A {
-  background-image: url(../img/人物背景.jpg);
+  background-image: url(../img/背景４.jpg);
   background-size: cover;
 }
 
@@ -324,6 +332,7 @@ span {
   font-size: 30px;
   padding-top: 100px;
   font-family:  'HGP行書体';
+  margin: 0px;
 }
 
 
@@ -473,9 +482,12 @@ span {
 .content3 {
   background-image: url(../img/たたみ２.jpg);
   background-size: cover;
-  padding-top: 30px;
+  padding-top: 20px;
   height: 100%;
 }
+
+
+
 
 
 /* クイズ画面のCSSコード -------------------------------------*/
@@ -483,26 +495,27 @@ span {
 #question {
   margin-bottom: 30px;
   font-weight: bold;
+  border: 3px solid #279C56;
+  background-color: #fff;
 }
 
 #choices {
   list-style: none;
   padding: 0px;
   margin-bottom: 16px;
-  /* display: flex; */
 }
 
 #choices > li {
   border: 3px solid #279C56;
   border-radius: 4px;
   padding: 10px;
-  /* margin-bottom: 10px; */
+  margin: 15px;
   cursor: pointer;
   font-family: 'HGP行書体';
   font-size: 18px;
-  margin: auto;
-  margin-bottom: 3px;
-  
+  background-color: #fff;
+  /* width: 60px;
+  height: 120px; */
 }
 
 #choices > li:hover {
@@ -513,20 +526,23 @@ span {
   background: #cccccc;
   box-shadow: 0 4px 0 #bbbbbb;
   opacity: 0.7;
+  margin-top: 40px;
 }
 
 #choices > li.correct {
   background: #d4edda;
-  border-color: #c3e6cb;
+  /* border-color: #c3e6cb; */
   color: #155724;
-  font-weight: bold;
+  font-weight: bold; 
+   margin: 0px;
 }
 
 #choices > li.wrong {
   background: #f8d8da;
-  border-color: #f5c6cb;
+  /* border-color: #f5c6cb; */
   color: #721;
   font-weight: bold;
+  margin: 0px;
 }
 
 #choices > li.correct::after {
@@ -542,12 +558,12 @@ span {
 .container {
   width: 350px;
   margin: 0 auto;
-  margin-right: 0px;
-  margin-top: 10px;
+  margin-top: 100px;
   margin-bottom: 100px;
-  background: #ffffff;
+  /* background-color: rgb(108, 255, 115);
+  height: 100%; */
   border-radius: 4px;
-  padding: 20px;
+  padding: 15px;
   position: relative;
 }
 
@@ -564,6 +580,7 @@ span {
   text-align: center;
   color: #ffffff;
   box-shadow: 0 4px 0 #2880b9;
+  margin-top: 40px;
 }
 
 #result > a {
@@ -603,10 +620,10 @@ span {
   margin-bottom: 10px;
 }
 
- .vertical {
+ /* .vertical {
   writing-mode: vertical-rl;
-  margin: auto;
-}
+  margin:auto;
+} */
 
 
 /* クイズページのresurt画面 ----------------------------------*/
@@ -615,7 +632,7 @@ span {
   font-size: 28px;
   font-family: 'HGP行書体';
   margin: auto;
-  background: #ffffff;
+  /* background: #ffffff; */
 }
 
 .p2 {

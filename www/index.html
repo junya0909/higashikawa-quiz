@@ -1,9 +1,12 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
 
@@ -14,37 +17,37 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script>
     // Page init event
-    document.addEventListener('init', function(event) {
+    document.addEventListener('init', function (event) {
       var page = event.target;
 
-    // 一字決まり札を覚えよう！から2ページ目
+      // 一字決まり札を覚えよう！から2ページ目
 
       if (page.matches('#first-page')) {
-        page.querySelector('#push-button1').onclick = function() {
+        page.querySelector('#push-button1').onclick = function () {
           document.querySelector('#navigator').pushPage('page2.html');
         };
 
       } else if (page.matches('#second-page')) {
-        page.querySelector('#pop-button').onclick = function() {
+        page.querySelector('#pop-button').onclick = function () {
           document.querySelector('#navigator').resetToPage();
         };
       }
 
-// クイズボタンからクイズページへ
+      // クイズボタンからクイズページへ
 
       if (page.matches('#first-page')) {
-        page.querySelector('#push-button3').onclick = function() {
-        document.querySelector('#navigator').pushPage('pageA.html');
+        page.querySelector('#push-button3').onclick = function () {
+          document.querySelector('#navigator').pushPage('pageA.html');
         };
 
       } else if (page.matches('#A-page')) {
-        page.querySelector('#pop-button0').onclick = function() {
-        document.querySelector('#navigator').resetToPage();
+        page.querySelector('#pop-button0').onclick = function () {
+          document.querySelector('#navigator').resetToPage();
         };
-      
-      
 
-      // クイズのscriptコード
+
+
+        // クイズのscriptコード
 
         const question = document.getElementById("question");
         const choices = document.getElementById("choices");
@@ -54,47 +57,47 @@
         const scoreWord = document.querySelector("#result > h4");
         const bangWord = document.querySelector("#bang"); /////
 
-      
+
 
         const quizSet = shuffle([
 
-// 1
-          {q: "むらさめの つゆもまだひぬ まきのはに", c: ["ただありあけの つきぞのこれる", "きりたちのぼる あきのゆうぐれ", "むべやまかぜを あらしといふらむ", "しのぶることの よわりもぞする"]},
-// 2
-          {q: "すみのえの きしによるなみ よるさへや", c: ["われてもすゑ あはむとぞおもふ", "ゆめのかよいぢ ひとめよくらむ", "はげしかれとは いのらぬものよ", "いかにひさしき ものとかはしる"]},
-// 3
-          {q: "めぐりあひて みしやそれとも わかぬまに", c: ["いづこもおなじ あきのゆうぐれ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける", "もみじのにしき かみのまにまに"]},
-// 4
-          {q: "ふくからに あきのくさきを しをるべば", c: ["ゆめのかよいぢ ひとめよくらむ", "むべやまかぜを あらしといふらむ", "きりたちのぼる あきのゆふぐれ", "こいにくちなん なこそおしけれ"]},
-// 5
-          {q: "さびしさに やどをたちいでて ながむれば", c: ["われてもすゑに あわむとぞおもう", "いづこもおなじ あきのゆふぐれ", "くもがくれにし よはのつきかな", "こいにくちなん なこそおしけれ"]},
-// 6
-          {q: "ほととぎす なきつるかたを ながむれば", c: ["いくよねざめの すまのせきもり", "ただありあけの つきぞのこれる", "いづこもおなじ あきのゆふぐれ", "いでそよひとを わすれやはする"]},
-// 7
-          {q: "せをはやみ いはにせかるる たきがはの", c: ["ただありあけの つきぞのこれる", "われてもすゑ あはむとぞおもふ", "ゆめのかよいぢ ひとめよくらむ", "いでそよひとを わすれやはする"]},
-// 8
-          {q: "なげきつつ ひとりねるよの あくるまは", c: ["われてもすゑ あはむとぞおもふ", "いかにひさしき ものとかはしる", "くもがくれにし よはのつきかな", "いづこもおなじ あきのゆうぐれ"]},
-// 9
-          {q: "ありまやま いなのささはら かぜふけば", c: ["われてもすゑ あはむとぞおもふ", "いでそよひとを わすれやはする", "いかにひさしき ものとかはしる", "ただありあけの つきぞのこれる"]},
-// 10
-          {q: "かささぎの わたせるはしに おくしもの", c: ["ゆめのかよいぢ ひとめよくらむ", "しろきをみれば よぞふけにける", "きりたちのぼる あきのゆふぐれ", "こいにくちなん なこそおしけれ"]},
-// 11
-          {q: "たまのをよ たえなばたえね ながらへば", c: ["ゆめのかよいぢ ひとめよくらむ", "しのぶることの よわりもぞする","きりたちのぼる あきのゆふぐれ", "はげしかれとは いのらぬものよ"]},
-// 12
-          {q: "うかりける ひとをはつせの やまおろしよ", c: ["ゆめのかよいぢ ひとめよくらむ", "はげしかれとは いのらぬものよ", "むべやまかぜを あらしといふらむ", "もみじのにしき かみのまにまに"]},
-// 13
-          {q: "このたびは ぬさもとりあえず たむけやま", c: ["しろきをみれば よぞふけにける", "もみじのにしき かみのまにまに", "いくよねざめぬ すまのせきもり", "ただありあけの つきぞのこれる"]},
-// 14
-          {q: "あわじしま かようちどりの なくこえに", c: ["われてもすゑ あはむとぞおもふ", "いくよねざめぬ すまのせきもり", "はげしかれとは いのらぬものよ", "いでそよひとを わすれやはする"]},
-// 15
-          {q: "うらみわび ほさぬそでだに あるものを", c: ["われてもすゑ あはむとぞおもふ", "こいにくちなん なこそおしけれ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"]},
+          // 1
+          { q: "むらさめの つゆもまだひぬ まきのはに", c: ["ただありあけの つきぞのこれる", "きりたちのぼる あきのゆうぐれ", "ゆめのかよいぢ ひとめよくらむ", "しのぶることの よわりもぞする"] },
+          // 2
+          { q: "すみのえの きしによるなみ よるさへや", c: ["われてもすゑ あはむとぞおもふ", "ゆめのかよいぢ ひとめよくらむ", "はげしかれとは いのらぬものよ", "いかにひさしき ものとかはしる"] },
+          // 3
+          { q: "めぐりあひて みしやそれとも わかぬまに", c: ["いづこもおなじ あきのゆうぐれ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける", "もみじのにしき かみのまにまに"] },
+          // 4
+          { q: "ふくからに あきのくさきを しをるべば", c: ["われてもすゑに あはむとぞおもふ", " むべやまかぜを あらしといふらん", "ひるはきえつつものこそおこれ", "ひとめもくさも かれぬとおもえば"] },
+          // 5
+          { q: "さびしさに やどをたちいでて ながむれば", c: ["いくよねざめの すまのせきもり", "いづこもおなじ あきのゆふぐれ", "くもがくれにし よはのつきかな", "こいにくちなん なこそおしけれ"] },
+          // 6
+          { q: "ほととぎす なきつるかたを ながむれば", c: ["いくよねざめの すまのせきもり", "ただありあけの つきぞのこれる", "いづこもおなじ あきのゆふぐれ", "いでそよひとを わすれやはする"] },
+          // 7
+          { q: "せをはやみ いはにせかるる たきがはの", c: ["とやまのかすみ たたずもあらなむ", "われてもすゑに あはむとぞおもふ", "むべやまかぜを あらしといふらむ", "ひとめもくさも かれぬとおもえば"] },
+          // 8
+          { q: "なげきつつ ひとりねるよの あくるまは", c: ["われてもすゑ あはむとぞおもふ", "いかにひさしき ものとかはしる", "くもがくれにし よはのつきかな", "いづこもおなじ あきのゆうぐれ"] },
+          // 9
+          { q: "ありまやま いなのささはら かぜふけば", c: ["われてもすゑ あはむとぞおもふ", "いでそよひとを わすれやはする", "いかにひさしき ものとかはしる", "ただありあけの つきぞのこれる"] },
+          // 10
+          { q: "かささぎの わたせるはしに おくしもの", c: ["ゆめのかよいぢひとめよくらむ", "しろきをみれば よぞふけにける", "きりたちのぼる あきのゆふぐれ", "こいにくちなん なこそおしけれ"] },
+          // 11
+          { q: "たまのをよ たえなばたえね ながらへば", c: ["ゆめのかよいぢ ひとめよくらむ", "しのぶることの よわりもぞする", "きりたちのぼる あきのゆふぐれ", "はげしかれとは いのらぬものよ"] },
+          // 12
+          { q: "うかりける ひとをはつせの やまおろしよ", c: ["ゆめのかよいぢ ひとめよくらむ", "はげしかれとは いのらぬものよ", "しろきをみれば よぞふけにける", "もみじのにしき かみのまにまに"] },
+          // 13
+          { q: "このたびは ぬさもとりあえず たむけやま", c: ["しろきをみれば よぞふけにける", "もみじのにしき かみのまにまに", "いくよねざめぬ すまのせきもり", "ただありあけの つきぞのこれる"] },
+          // 14
+          { q: "あわじしま かようちどりの なくこえに", c: ["われてもすゑ あはむとぞおもふ", "いくよねざめぬ すまのせきもり", "はげしかれとは いのらぬものよ", "いでそよひとを わすれやはする"] },
+          // 15
+          { q: "うらみわび ほさぬそでだに あるものを", c: ["われてもすゑ あはむとぞおもふ", "こいにくちなん なこそおしけれ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
         ]);
         let currentNum = 0;
         let isAnswered;
         let score = 0;
         let bango = 1;    //////////////
 
-      
+
 
         function shuffle(arr) {
           for (let i = arr.length - 1; i > 0; i--) {
@@ -114,7 +117,7 @@
           if (li.textContent === quizSet[currentNum].c[1]) {
             li.classList.add("correct");
             score++;
-          }else {
+          } else {
             li.classList.add("wrong");
           }
 
@@ -127,7 +130,7 @@
 
           question.textContent = quizSet[currentNum].q;
 
-          while(choices.firstChild) {
+          while (choices.firstChild) {
             choices.removeChild(choices.firstChild);
           }
 
@@ -142,7 +145,7 @@
           });
 
           if (currentNum === quizSet.length - 1) {
-          btn.textContent = "結果表示へ";
+            btn.textContent = "結果表示へ";
           }
         }
 
@@ -165,16 +168,16 @@
             bango++;         //////////////////
           }
 
-           bangWord.textContent = `問題 ${bango}`;  /////////////
-          
+          bangWord.textContent = `問題 ${bango}`;  /////////////
 
-          
+
+
 
           if (score === quizSet.length) {
-            scoreWord.textContent = "全問正解だ！！！"  + "  おめでとう！！";
+            scoreWord.textContent = "全問正解だ！！！" + "  おめでとう！！";
           } else if ((score >= quizSet.length - 5) && (score < quizSet.length)) {
             scoreWord.textContent = "あと、もう一歩だね！！";
-          } else if((score >= quizSet.length - 8) && (score < quizSet.length -5)) {
+          } else if ((score >= quizSet.length - 8) && (score < quizSet.length - 5)) {
             scoreWord.textContent = "なかなかだね！！";
           } else {
             scoreWord.textContent = "もう一回覚えなおそう！！";
@@ -183,319 +186,533 @@
 
       }
 
-    
-
-      
-    
-    
-    
 
 
-// page 2 から page 3 
-  
+
+
+
+
+
+
+      // page 2 から page 3 
+
       if (page.matches('#second-page')) {
-        page.querySelector('#push-button').onclick = function() {
+        page.querySelector('#push-button').onclick = function () {
           document.querySelector('#navigator').pushPage('page3.html');
         };
 
       } else if (page.matches('#third-page')) {
-        page.querySelector('#pop-button').onclick = function() {
+        page.querySelector('#pop-button').onclick = function () {
           document.querySelector('#navigator').resetToPage("page1.html");
         };
       }
 
-// page3 から page4 へ
+      // page3 から page4 へ
 
       if (page.matches('#third-page')) {
-        page.querySelector('#push-button_31').onclick = function() {
+        page.querySelector('#push-button_31').onclick = function () {
           document.querySelector('#navigator').pushPage('page4.html');
         };
 
       } else if (page.matches('#four-page')) {
-        page.querySelector('#pop-button').onclick = function() {
+        page.querySelector('#pop-button').onclick = function () {
           document.querySelector('#navigator').popPage();
         };
       }
 
-// page 3 から page 5 へ
+      // page 3 から page 5 へ
 
       if (page.matches('#third-page')) {
-        page.querySelector('#push-button_32').onclick = function() {
+        page.querySelector('#push-button_32').onclick = function () {
           document.querySelector('#navigator').pushPage('page5.html');
         };
 
       } else if (page.matches('#five-page')) {
-        page.querySelector('#pop-button').onclick = function() {
+        page.querySelector('#pop-button').onclick = function () {
           document.querySelector('#navigator').popPage();
         };
       }
 
-// page 3 から page 6 へ
+      // page 3 から page 6 へ
 
       if (page.matches('#third-page')) {
-        page.querySelector('#push-button_33').onclick = function() {
+        page.querySelector('#push-button_33').onclick = function () {
           document.querySelector('#navigator').pushPage('page6.html');
         };
 
       } else if (page.matches('#six-page')) {
-        page.querySelector('#pop-button').onclick = function() {
+        page.querySelector('#pop-button').onclick = function () {
           document.querySelector('#navigator').popPage();
         };
       }
 
-// page 5 から page 7 へ
+      // page 3 から page 7 へ
 
       if (page.matches('#third-page')) {
-        page.querySelector('#push-button_34').onclick = function() {
+        page.querySelector('#push-button_34').onclick = function () {
           document.querySelector('#navigator').pushPage('page7.html');
         };
 
       } else if (page.matches('#seven-page')) {
-        page.querySelector('#pop-button').onclick = function() {
+        page.querySelector('#pop-button').onclick = function () {
           document.querySelector('#navigator').popPage();
         };
       }
 
-// page 6 から page 8 へ
+      // page 3 から page 8 へ
 
       if (page.matches('#third-page')) {
-        page.querySelector('#push-button_35').onclick = function() {
+        page.querySelector('#push-button_35').onclick = function () {
           document.querySelector('#navigator').pushPage('page8.html');
         };
 
       } else if (page.matches('#eight-page')) {
-        page.querySelector('#pop-button').onclick = function() {
+        page.querySelector('#pop-button').onclick = function () {
           document.querySelector('#navigator').popPage();
         };
       }
 
-// page 7 から page 9 へ
+      // page 3 から page 9 へ
 
       if (page.matches('#third-page')) {
-        page.querySelector('#push-button_36').onclick = function() {
+        page.querySelector('#push-button_36').onclick = function () {
           document.querySelector('#navigator').pushPage('page9.html');
         };
 
       } else if (page.matches('#nine-page')) {
-        page.querySelector('#pop-button').onclick = function() {
+        page.querySelector('#pop-button').onclick = function () {
           document.querySelector('#navigator').popPage();
         };
       }
 
-// page 3 から page 10 へ
+      // page 3 から page 10 へ
 
       if (page.matches('#third-page')) {
-        page.querySelector('#push-button_37').onclick = function() {
+        page.querySelector('#push-button_37').onclick = function () {
           document.querySelector('#navigator').pushPage('page10.html');
         };
 
       } else if (page.matches('#ten-page')) {
-        page.querySelector('#pop-button').onclick = function() {
+        page.querySelector('#pop-button').onclick = function () {
           document.querySelector('#navigator').popPage();
         };
       }
 
-// トップページから面白い覚え札へ
+      // トップページから面白い覚え札へ
 
       if (page.matches('#first-page')) {
-        page.querySelector('#push-button2').onclick = function() {
-        document.querySelector('#navigator').pushPage('page_A0.html');
+        page.querySelector('#push-button2').onclick = function () {
+          document.querySelector('#navigator').pushPage('page_A0.html');
         };
 
       } else if (page.matches('#A0-page')) {
-        page.querySelector('#pop-button').onclick = function() {
-        document.querySelector('#navigator').resetToPage();
+        page.querySelector('#pop-button').onclick = function () {
+          document.querySelector('#navigator').resetToPage();
         };
       }
 
-// 面白覚え札選択画面から page_A1 へ
+      // 面白覚え札選択画面から page_A1 へ
 
       if (page.matches('#A0-page')) {
-        page.querySelector('#push-button_A1').onclick = function() {
-        document.querySelector('#navigator').pushPage('page_A1.html');
+        page.querySelector('#push-button_A1').onclick = function () {
+          document.querySelector('#navigator').pushPage('page_A1.html');
         };
 
       } else if (page.matches('#A1-page')) {
-        page.querySelector('#pop-button').onclick = function() {
-        document.querySelector('#navigator').popPage();
+        page.querySelector('#pop-button').onclick = function () {
+          document.querySelector('#navigator').popPage();
         };
 
-// jQuery
-        $(function() {
-          $("#hide-text").click(function(){
-          $("#text").fadeIn();
+        // jQuery
+        $(function () {
+          $("#hide-text").click(function () {
+            $("#text").fadeIn();
           });
         });
 
       }
-  
 
-  // 面白い覚え札選択画面から page_A2 へ
+
+      // 面白い覚え札選択画面から page_A2 へ
 
       if (page.matches('#A0-page')) {
-        page.querySelector('#push-button_A2').onclick = function() {
-        document.querySelector('#navigator').pushPage('page_A2.html');
+        page.querySelector('#push-button_A2').onclick = function () {
+          document.querySelector('#navigator').pushPage('page_A2.html');
         };
 
       } else if (page.matches('#A2-page')) {
-        page.querySelector('#pop-button').onclick = function() {
-        document.querySelector('#navigator').popPage();
+        page.querySelector('#pop-button').onclick = function () {
+          document.querySelector('#navigator').popPage();
         };
 
-// jQuery
-        $(function() {
-          $("#hide-text1").click(function(){
-          $("#text1").fadeIn();
+        // jQuery
+        $(function () {
+          $("#hide-text1").click(function () {
+            $("#text1").fadeIn();
           });
         });
 
       }
 
- // 面白い覚え札選択画面から page_A3 へ
+      // 面白い覚え札選択画面から page_A3 へ
 
       if (page.matches('#A0-page')) {
-        page.querySelector('#push-button_A3').onclick = function() {
-        document.querySelector('#navigator').pushPage('page_A3.html');
+        page.querySelector('#push-button_A3').onclick = function () {
+          document.querySelector('#navigator').pushPage('page_A3.html');
         };
 
       } else if (page.matches('#A3-page')) {
-        page.querySelector('#pop-button').onclick = function() {
-        document.querySelector('#navigator').popPage();
+        page.querySelector('#pop-button').onclick = function () {
+          document.querySelector('#navigator').popPage();
         };
 
-// jQuery
-        $(function() {
-          $("#hide-text2").click(function(){
-          $("#text2").fadeIn();
+        // jQuery
+        $(function () {
+          $("#hide-text2").click(function () {
+            $("#text2").fadeIn();
           });
         });
 
       }
 
- // 面白い覚え札選択画面から page_A4 へ
+      // 面白い覚え札選択画面から page_A4 へ
 
       if (page.matches('#A0-page')) {
-        page.querySelector('#push-button_A4').onclick = function() {
-        document.querySelector('#navigator').pushPage('page_A4.html');
+        page.querySelector('#push-button_A4').onclick = function () {
+          document.querySelector('#navigator').pushPage('page_A4.html');
         };
 
       } else if (page.matches('#A4-page')) {
-        page.querySelector('#pop-button').onclick = function() {
-        document.querySelector('#navigator').popPage();
+        page.querySelector('#pop-button').onclick = function () {
+          document.querySelector('#navigator').popPage();
         };
 
-// jQuery
-        $(function() {
-          $("#hide-text3").click(function(){
-          $("#text3").fadeIn();
+        // jQuery
+        $(function () {
+          $("#hide-text3").click(function () {
+            $("#text3").fadeIn();
           });
         });
 
       }
 
-   // 面白い覚え札選択画面から page_A5 へ
+      // 面白い覚え札選択画面から page_A5 へ
 
       if (page.matches('#A0-page')) {
-        page.querySelector('#push-button_A5').onclick = function() {
-        document.querySelector('#navigator').pushPage('page_A5.html');
+        page.querySelector('#push-button_A5').onclick = function () {
+          document.querySelector('#navigator').pushPage('page_A5.html');
         };
 
       } else if (page.matches('#A5-page')) {
-        page.querySelector('#pop-button').onclick = function() {
-        document.querySelector('#navigator').popPage();
+        page.querySelector('#pop-button').onclick = function () {
+          document.querySelector('#navigator').popPage();
         };
 
- // jQuery
-        $(function() {
-          $("#hide-text4").click(function(){
-          $("#text4").fadeIn();
+        // jQuery
+        $(function () {
+          $("#hide-text4").click(function () {
+            $("#text4").fadeIn();
           });
         });
 
       }
 
-     // 面白い覚え札選択画面から page_A6 へ
+      // 面白い覚え札選択画面から page_A6 へ
 
       if (page.matches('#A0-page')) {
-        page.querySelector('#push-button_A6').onclick = function() {
-        document.querySelector('#navigator').pushPage('page_A6.html');
+        page.querySelector('#push-button_A6').onclick = function () {
+          document.querySelector('#navigator').pushPage('page_A6.html');
         };
 
       } else if (page.matches('#A6-page')) {
-        page.querySelector('#pop-button').onclick = function() {
-        document.querySelector('#navigator').popPage();
+        page.querySelector('#pop-button').onclick = function () {
+          document.querySelector('#navigator').popPage();
         };
 
-// jQuery
-        $(function() {
-          $("#hide-text5").click(function(){
-          $("#text5").fadeIn();
+        // jQuery
+        $(function () {
+          $("#hide-text5").click(function () {
+            $("#text5").fadeIn();
           });
         });
 
       }
 
-     // 面白い覚え札選択画面から page_A7 へ
+      // 面白い覚え札選択画面から page_A7 へ
 
       if (page.matches('#A0-page')) {
-        page.querySelector('#push-button_A7').onclick = function() {
-        document.querySelector('#navigator').pushPage('page_A7.html');
+        page.querySelector('#push-button_A7').onclick = function () {
+          document.querySelector('#navigator').pushPage('page_A7.html');
         };
 
       } else if (page.matches('#A7-page')) {
-        page.querySelector('#pop-button').onclick = function() {
-        document.querySelector('#navigator').popPage();
+        page.querySelector('#pop-button').onclick = function () {
+          document.querySelector('#navigator').popPage();
         };
 
-// jQuery
-        $(function() {
-          $("#hide-text6").click(function(){
-          $("#text6").fadeIn();
+        // jQuery
+        $(function () {
+          $("#hide-text6").click(function () {
+            $("#text6").fadeIn();
           });
         });
 
       }
 
-     // 面白い覚え札選択画面から page_A8 へ
+      // 面白い覚え札選択画面から page_A8 へ
 
       if (page.matches('#A0-page')) {
-        page.querySelector('#push-button_A8').onclick = function() {
-        document.querySelector('#navigator').pushPage('page_A8.html');
+        page.querySelector('#push-button_A8').onclick = function () {
+          document.querySelector('#navigator').pushPage('page_A8.html');
         };
 
       } else if (page.matches('#A8-page')) {
-        page.querySelector('#pop-button').onclick = function() {
-        document.querySelector('#navigator').popPage();
+        page.querySelector('#pop-button').onclick = function () {
+          document.querySelector('#navigator').popPage();
         };
 
-// jQuery
-        $(function() {
-          $("#hide-text7").click(function(){
-          $("#text7").fadeIn();
+        // jQuery
+        $(function () {
+          $("#hide-text7").click(function () {
+            $("#text7").fadeIn();
           });
         });
 
       }
-  
-    3});
 
-  
-  
+      // トップページから100問クイズへ
 
-  if (ons.platform.isIPhoneX()) {
-    document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-    document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
-  }
+      if (page.matches('#first-page')) {
+        page.querySelector('#push-button4').onclick = function () {
+          document.querySelector('#navigator').pushPage('page_q1.html');
+        };
 
-   
+      } else if (page.matches('#q1-page')) {
+        page.querySelector('#pop-button0').onclick = function () {
+          document.querySelector('#navigator').resetToPage("page1.html");
+        };
+
+
+        // クイズのscriptコード
+
+        const question = document.getElementById("question");
+        const choices = document.getElementById("choices");
+        const btn = document.getElementById("btn");
+        const result = document.getElementById("result");
+        const scoreLabel = document.querySelector("#result > p");
+        const scoreWord = document.querySelector("#result > h4");
+        const bangWord = document.querySelector("#bang"); /////
+
+
+
+        const quizSet = shuffle([
+
+          // 1
+          { q: "あきのたの かりほのいほの とまをあらみ", c: ["ただありあけの つきぞのこれる", "わがころもては つゆにむれつつ", "むべやまかぜを あらしといふらむ", "しのぶることの よわりもぞする"] },
+          // 2
+          { q: "はるすぎて なつきにけらし しろたえの", c: ["われてもすゑ あはむとぞおもふ", "ころもほすてふ あまのかぐやま", "はげしかれとは いのらぬものよ", "いかにひさしき ものとかはしる"] },
+          // 3
+          { q: "あしびきの やまどりのをの しだりをの", c: ["いづこもおなじ あきのゆうぐれ", "ながながしよう ひとりかもねむ", "しろきをみれば よぞふけにける", "もみじのにしき かみのまにまに"] },
+          // 4
+          { q: "たごのうらに うちいでてみれば しろたえの", c: ["ゆめのかよいぢ ひとめよくらむ", "ふじのたかねに ゆきはふりつつ", "きりたちのぼる あきのゆふぐれ", "こいにくちなん なこそおしけれ"] },
+          // 5
+          { q: "おくやまに もみぢふみわけ なくしかの", c: ["われてもすゑに あわむとぞおもう", "こえきくときぞ あきはかなけり", "くもがくれにし よはのつきかな", "こいにくちなん なこそおしけれ"] },
+          // 6
+          { q: "かささぎの わたせるはしに おくしもの", c: ["いくよねざめの すまのせきもり", "しろきをみれば よぞふけにける", "いづこもおなじ あきのゆふぐれ", "いでそよひとを わすれやはする"] },
+          // 7
+          { q: "あまのはら ふりさけみれば かすがなる", c: ["ただありあけの つきぞのこれる", "みかさのやまに いでしつきかも", "ゆめのかよいぢ ひとめよくらむ", "いでそよひとを わすれやはする"] },
+          // 8
+          { q: "わがいほは みやこのたつみ しかぞすむ", c: ["われてもすゑ あはむとぞおもふ", "よをうぢやまと ひとはいふなり", "くもがくれにし よはのつきかな", "いづこもおなじ あきのゆうぐれ"] },
+          // 9
+          { q: "はなのいろは うつりにけりな いたずらに", c: ["われてもすゑ あはむとぞおもふ", "わがみよにふる ながめせしまに", "いかにひさしき ものとかはしる", "ただありあけの つきぞのこれる"] },
+          // 10
+          { q: "これやこの ゆくもかへるも わかれては", c: ["ゆめのかよいぢ ひとめよくらむ", "しるもしらぬも あふさかのせき", "きりたちのぼる あきのゆふぐれ", "こいにくちなん なこそおしけれ"] },
+          // 11
+          { q: "わたのはら やそしまかけて こぎいでぬと", c: ["ゆめのかよいぢ ひとめよくらむ", "ひとにはつげよ あまのつりぶね", "きりたちのぼる あきのゆふぐれ", "はげしかれとは いのらぬものよ"] },
+          // 12
+          { q: "あまつかぜ くものかよひぢ ふきとぢよ", c: ["ゆめのかよいぢ ひとめよくらむ", "をとめのすがた しばしとどめむ", "むべやまかぜを あらしといふらむ", "もみじのにしき かみのまにまに"] },
+          // 13
+          { q: "つくばねの みねよりおつる みなのがは", c: ["しろきをみれば よぞふけにける", "こひぞつもりて ふちとなりうる", "いくよねざめぬ すまのせきもり", "ただありあけの つきぞのこれる"] },
+          // 14
+          { q: "みちのくの しのぶもぢずり たれゆゑに", c: ["われてもすゑ あはむとぞおもふ", "みだれそめにし われならなくに", "はげしかれとは いのらぬものよ", "いでそよひとを わすれやはする"] },
+          // 15
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 16
+          { q: "たちわかれ いなばのやまの みねにおふる", c: ["われてもすゑ あはむとぞおもふ", "まつとしきかば いまかへりこむ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 17
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 18
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 19
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 20
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 21
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 22
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 23
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 24
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 25
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 26
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 27
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 28
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 29
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 30
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 31
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 32
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 33
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 34
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 35
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 36
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 37
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 38
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 39
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 40
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 41
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 42
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 43
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 44
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+          // 45
+          { q: "きみがため はるののにいでて わかなつむ", c: ["われてもすゑ あはむとぞおもふ", "わがころもでに ゆきはふりつつ", "くもがくれにし よはのつきかな", "しろきをみれば よぞふけにける"] },
+        ]);
+        let currentNum = 0;
+        let isAnswered;
+        let score = 0;
+        let bango = 1;    //////////////
+
+
+
+        function shuffle(arr) {
+          for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[j], arr[i]] = [arr[i], arr[j]];            //分割代入
+          }
+          return arr;
+        }
+
+
+        function checkAnswer(li) {
+          if (isAnswered) {
+            return;
+          }
+          isAnswered = true;
+
+          if (li.textContent === quizSet[currentNum].c[1]) {
+            li.classList.add("correct");
+            score++;
+          } else {
+            li.classList.add("wrong");
+          }
+
+          btn.classList.remove("disabled");
+        }
+
+
+        function setQuiz() {
+          isAnswered = false;
+
+          question.textContent = quizSet[currentNum].q;
+
+          while (choices.firstChild) {
+            choices.removeChild(choices.firstChild);
+          }
+
+          const shuffledChoices = shuffle([...quizSet[currentNum].c]);
+          shuffledChoices.forEach(choice => {
+            const li = document.createElement("li");
+            li.textContent = choice;
+            li.addEventListener("click", () => {
+              checkAnswer(li);
+            });
+            choices.appendChild(li);
+          });
+
+          if (currentNum === quizSet.length - 1) {
+            btn.textContent = "結果表示へ";
+          }
+        }
+
+
+        setQuiz();
+
+        btn.addEventListener("click", () => {
+          if (btn.classList.contains("disabled")) {
+            return;
+          }
+          btn.classList.add("disabled");
+
+          if (currentNum === quizSet.length - 1) {
+            // console.log(`Score: ${score} / ${quizSet.length}`);
+            scoreLabel.textContent = `得点は ... ${score} / ${quizSet.length}`;
+            result.classList.remove("hidden");
+          } else {
+            currentNum++;
+            setQuiz();
+            bango++;         //////////////////
+          }
+
+          bangWord.textContent = `問題 ${bango}`;  /////////////
+
+
+
+
+          if (score === quizSet.length) {
+            scoreWord.textContent = "全問正解だ！！！" + "  おめでとう！！";
+          } else if ((score >= quizSet.length - 5) && (score < quizSet.length)) {
+            scoreWord.textContent = "あと、もう一歩だね！！";
+          } else if ((score >= quizSet.length - 8) && (score < quizSet.length - 5)) {
+            scoreWord.textContent = "なかなかだね！！";
+          } else {
+            scoreWord.textContent = "もう一回覚えなおそう！！";
+          }
+        });
+
+      }
+
+
+    });
+
+
+
+
+    if (ons.platform.isIPhoneX()) {
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+
+
 
   </script>
-   
+
 </head>
+
 <body>
   <ons-navigator id="navigator" page="page1.html"></ons-navigator>
 
-<!-- トップページ（page 1)の画面 -->
+  <!-- トップページ（page 1)の画面 -->
 
   <ons-template id="page1.html">
     <ons-page id="first-page">
@@ -505,22 +722,26 @@
 
       <div class="content1" style="text-align: center">
         <p class="top">はじめての<br>百人一首</p>
-       
-        
+
+
         <!-- <img src="img/無題.png"><br> -->
         <ons-button id="push-button1">一字決まり札を覚えよう！</ons-button><br>
         <ons-button id="push-button2"> 面白い覚え札を覚えよう！ </ons-button><br>
-        <ons-button id="push-button3">ランダムクイズに挑戦！！</ons-button>
+        <ons-button id="push-button3">ランダムクイズに挑戦！！</ons-button><br>
+        <ons-button id="push-button4">腕試し100問に挑戦！！</ons-button>
+
       </div>
     </ons-page>
   </ons-template>
 
-<!-- page 2 の画面 -->
+  <!-- page 2 の画面 -->
 
   <ons-template id="page2.html">
     <ons-page id="second-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>ホーム</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>ホーム</ons-back-button>
+        </div>
         <div class="center">Page 2</div>
       </ons-toolbar>
 
@@ -534,14 +755,17 @@
   </ons-template>
 
 
-<!-- page 3の画面 -->
+  <!-- page 3の画面 -->
 
   <ons-template id="page3.html">
     <ons-page id="third-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page 2</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page 2</ons-back-button>
+        </div>
         <div class="center">選択画面</div>
       </ons-toolbar>
+
 
       <div class="content0" style="text-align: center">
         <div class="section">
@@ -565,12 +789,14 @@
     </ons-page>
   </ons-template>
 
-<!-- page 4の画面 -->
+  <!-- page 4の画面 -->
 
- <ons-template id="page4.html">
+  <ons-template id="page4.html">
     <ons-page id="four-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page 3</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page 3</ons-back-button>
+        </div>
         <div class="center">page 4</div>
       </ons-toolbar>
 
@@ -579,22 +805,24 @@
         <h1 class="col">寂蓮法師<br>じゃくれんほうし</h1>
         <h2>村雨の<br>露もまだひぬ 槇の葉に<br>霧たちのぼる 秋の夕ぐれ</h2><br>
         <h4><span>上の句</span><br>
-        <span class="spancolor"> むらさめの<br>つゆもまだひぬ まきのはに</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> きりたちのぼる あきのゆうぐれ</span></h4><br>
+          <span class="spancolor"> むらさめの<br>つゆもまだひぬ まきのはに</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> きりたちのぼる あきのゆうぐれ</span></h4><br>
         <!-- <ons-button id="push-button">次へ</ons-button> -->
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
     </ons-page>
-  </ons-template> 
+  </ons-template>
 
-<!-- page 5の画面 -->
+  <!-- page 5の画面 -->
 
 
   <ons-template id="page5.html">
     <ons-page id="five-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page 3</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page 3</ons-back-button>
+        </div>
         <div class="center">page 5</div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
@@ -602,9 +830,9 @@
         <h1 class="col">藤原敏行朝臣<br>ふじわらのとしゆきあそん</h1>
         <h2>住の江の<br>岸に寄る波 よるさへや<br>夢の通ひ路 人目よくらむ</h2><br>
         <h4 class="ku"><span>上の句</span><br>
-        <span class="spancolor"> すみのえの<br>きしによるなみ よるさへや</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> ゆめのかよいぢ  ひとめよくらん</span></h4><br>
+          <span class="spancolor"> すみのえの<br>きしによるなみ よるさへや</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> ゆめのかよいぢ ひとめよくらん</span></h4><br>
         <!-- <ons-button id="push-button">次へ</ons-button> -->
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
@@ -616,7 +844,9 @@
   <ons-template id="page6.html">
     <ons-page id="six-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page 3</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page 3</ons-back-button>
+        </div>
         <div class="center">page 6</div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
@@ -624,9 +854,9 @@
         <h1 class="col">紫式部<br>むらさきしきぶ</h1>
         <h2>めぐり逢ひて<br>見しやそれとも わかぬ間に<br>雲がくれにし 夜半の月かな</h2><br>
         <h4 class="ku"><span>上の句</span><br>
-        <span class="spancolor"> めぐりあひて<br>みしやそれとも わかぬまに</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> くもがくれにし よはのつきかな</span></h4><br>
+          <span class="spancolor"> めぐりあひて<br>みしやそれとも わかぬまに</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> くもがくれにし よはのつきかな</span></h4><br>
         <!-- <ons-button id="push-button">次へ</ons-button> -->
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
@@ -638,7 +868,9 @@
   <ons-template id="page7.html">
     <ons-page id="seven-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page 3</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page 3</ons-back-button>
+        </div>
         <div class="center">page 7</div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
@@ -646,9 +878,9 @@
         <h1 class="col">文屋康秀<br>ぶんやのやすひで</h1>
         <h2>吹くからに<br>秋の草木の しをるれば<br>むべ山風を あらしといふらむ</h2><br>
         <h4 class="ku"><span>上の句</span><br>
-        <span class="spancolor"> ふくからに<br>あきのくさきを しをるれば </span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> むべやまかぜを あらしといふらむ</span></h4><br>
+          <span class="spancolor"> ふくからに<br>あきのくさきを しをるれば </span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> むべやまかぜを あらしといふらむ</span></h4><br>
         <!-- <ons-button id="push-button">次へ</ons-button> -->
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
@@ -660,7 +892,9 @@
   <ons-template id="page8.html">
     <ons-page id="eight-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page 3</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page 3</ons-back-button>
+        </div>
         <div class="center">page 8</div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
@@ -668,9 +902,9 @@
         <h1 class="col">良暹法師<br>りょうぜんほうし</h1>
         <h2>さびしさに<br>宿をたち出でて ながむれば<br>いづこも同じ 秋の夕暮</h2><br>
         <h4 class="ku"><span>上の句</span><br>
-        <span class="spancolor"> さびしさに<br>やどをたちいでて ながむれば</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> いづこもおなじ あきのゆうぐれ</span></h4><br>
+          <span class="spancolor"> さびしさに<br>やどをたちいでて ながむれば</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> いづこもおなじ あきのゆうぐれ</span></h4><br>
         <!-- <ons-button id="push-button">次へ</ons-button> -->
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
@@ -682,7 +916,9 @@
   <ons-template id="page9.html">
     <ons-page id="nine-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page 3</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page 3</ons-back-button>
+        </div>
         <div class="center">page 9</div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
@@ -690,9 +926,9 @@
         <h1 class="col">後徳大寺左大臣<br>ごとくだいじのさだいじん</h1>
         <h2>ほととぎす<br>鳴きつる方を ながむれば<br>ただ有明の 月ぞ残れる</h2><br>
         <h4 class="ku"><span>上の句</span><br>
-        <span class="spancolor"> ほととぎす<br>なきつるかたを ながむれば</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> ただありあけの つきぞのこれる</span></h4><br>
+          <span class="spancolor"> ほととぎす<br>なきつるかたを ながむれば</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> ただありあけの つきぞのこれる</span></h4><br>
         <!-- <ons-button id="push-button">次へ</ons-button> -->
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
@@ -704,7 +940,9 @@
   <ons-template id="page10.html">
     <ons-page id="ten-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page 3</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page 3</ons-back-button>
+        </div>
         <div class="center">page 10</div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
@@ -712,9 +950,9 @@
         <h1 class="col">崇徳院<br>すとくいん</h1>
         <h2>瀬を早み<br>岩にせかるる 滝川の<br>われても末に 逢はむとぞ思ふ</h2><br>
         <h4 class="ku"><span>上の句</span><br>
-        <span class="spancolor"> せをはやみ<br>いはにせかるる たきがはの</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> われてもすゑに あはむとぞおもふ</span></h4><br>
+          <span class="spancolor"> せをはやみ<br>いはにせかるる たきがはの</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> われてもすゑに あはむとぞおもふ</span></h4><br>
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
     </ons-page>
@@ -725,7 +963,9 @@
   <ons-template id="page_A0.html">
     <ons-page id="A0-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>ホーム</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>ホーム</ons-back-button>
+        </div>
         <div class="center">page1</div>
       </ons-toolbar>
       <div class="content0" style="text-align: center">
@@ -750,47 +990,51 @@
         </div>
       </div>
     </ons-page>
-  </ons-template> 
+  </ons-template>
 
   <!-- 面白覚え札画面page_A1へ -->
 
   <ons-template id="page_A1.html">
     <ons-page id="A1-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>ホーム</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>ホーム</ons-back-button>
+        </div>
         <div class="center">page1</div>
       </ons-toolbar>
       <div class="content_A" style="text-align: center">
 
         <h2>憂かりける<br>人を初瀬の 山おろしよ<br>はげしかれとは 祈らぬものを</h2><br>
         <h4><span>上の句</span><br>
-        <span class="spancolor"> うかりける<br>ひとをはつせの やまおろしよ</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> はげしかれとは いのらぬものよ</span></h4><br>
+          <span class="spancolor"> うかりける<br>ひとをはつせの やまおろしよ</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> はげしかれとは いのらぬものよ</span></h4><br>
         <div class="btn2" id="hide-text">覚え方</div>
         <h1 id="text">うっかり ハゲ</h1><br>
-       
+
         <!-- <ons-button id="push-button_A2">次へ</ons-button> -->
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
     </ons-page>
-  </ons-template> 
+  </ons-template>
 
   <!-- 面白覚え札画面page_A2-->
 
   <ons-template id="page_A2.html">
     <ons-page id="A2-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page1</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page1</ons-back-button>
+        </div>
         <div class="center">page2</div>
       </ons-toolbar>
       <div class="content_A" style="text-align: center">
 
         <h2>このたびは<br>ぬさもとりあえず 手向山<br>紅葉の錦 神のまにまに</h2><br>
         <h4><span>上の句</span><br>
-        <span class="spancolor"> このたびは<br>ぬさもとりあえず たむけやま</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> もみじのにしき かみのまにまに</span></h4><br>
+          <span class="spancolor"> このたびは<br>ぬさもとりあえず たむけやま</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> もみじのにしき かみのまにまに</span></h4><br>
 
         <div class="btn2" id="hide-text1">覚え方</div>
         <h1 id="text1">このたびは まにまに</h1><br>
@@ -799,23 +1043,25 @@
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
     </ons-page>
-  </ons-template> 
+  </ons-template>
 
-   <!-- 面白覚え札画面page_A3 -->
+  <!-- 面白覚え札画面page_A3 -->
 
-   <ons-template id="page_A3.html">
+  <ons-template id="page_A3.html">
     <ons-page id="A3-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page2</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page2</ons-back-button>
+        </div>
         <div class="center">page3</div>
       </ons-toolbar>
       <div class="content_A" style="text-align: center">
 
         <h2>恨みわび<br>ほさぬ袖だに あるものを<br>恋に朽ちなむ 名こそ惜しけれ</h2><br>
         <h4><span>上の句</span><br>
-        <span class="spancolor"> うらみわび<br>ほさぬそでだに あるものを</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> こいにくちなん なこそおしけれ</span></h4><br>
+          <span class="spancolor"> うらみわび<br>ほさぬそでだに あるものを</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> こいにくちなん なこそおしけれ</span></h4><br>
 
         <div class="btn2" id="hide-text2">覚え方</div>
         <h1 id="text2">恨み わさび 故意に</h1><br>
@@ -824,23 +1070,25 @@
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
     </ons-page>
-  </ons-template> 
+  </ons-template>
 
-   <!-- 面白覚え札画面page_A4 -->
+  <!-- 面白覚え札画面page_A4 -->
 
-   <ons-template id="page_A4.html">
+  <ons-template id="page_A4.html">
     <ons-page id="A4-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page3</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page3</ons-back-button>
+        </div>
         <div class="center">page4</div>
       </ons-toolbar>
       <div class="content_A" style="text-align: center">
 
         <h2>淡路島<br>かよふ千鳥の 鳴く声に<br>いく夜寝覚めぬ 須磨の関守</h2><br>
         <h4><span>上の句</span><br>
-        <span class="spancolor"> あわじしま<br>かようちどりの なくこえに</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> いくよねざめぬ すまのせきもり</span></h4><br>
+          <span class="spancolor"> あわじしま<br>かようちどりの なくこえに</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> いくよねざめぬ すまのせきもり</span></h4><br>
 
         <div class="btn2" id="hide-text3">覚え方</div>
         <h1 id="text3">淡路島 いくよ～！</h1><br>
@@ -849,23 +1097,25 @@
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
     </ons-page>
-  </ons-template> 
+  </ons-template>
 
-   <!-- 面白覚え札画面page_A5-->
+  <!-- 面白覚え札画面page_A5-->
 
-   <ons-template id="page_A5.html">
+  <ons-template id="page_A5.html">
     <ons-page id="A5-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page4</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page4</ons-back-button>
+        </div>
         <div class="center">page5</div>
       </ons-toolbar>
       <div class="content_A" style="text-align: center">
-        
+
         <h2>嘆きつつ<br>ひとり寝る夜の 明くる間は<br>いかに久しき ものとかは知る</h2><br>
         <h4><span>上の句</span><br>
-        <span class="spancolor"> なげきつつ<br>ひとりねるよの あくるまは</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> いかにひさしき ものとかはしる</span></h4><br>
+          <span class="spancolor"> なげきつつ<br>ひとりねるよの あくるまは</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> いかにひさしき ものとかはしる</span></h4><br>
 
         <div class="btn2" id="hide-text4">覚え方</div>
         <h1 id="text4">嘆きの イカ</h1><br>
@@ -874,23 +1124,25 @@
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
     </ons-page>
-  </ons-template> 
+  </ons-template>
 
-   <!-- 面白覚え札画面page_A6-->
+  <!-- 面白覚え札画面page_A6-->
 
-   <ons-template id="page_A6.html">
+  <ons-template id="page_A6.html">
     <ons-page id="A6-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page5</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page5</ons-back-button>
+        </div>
         <div class="center">page6</div>
       </ons-toolbar>
       <div class="content_A" style="text-align: center">
 
         <h2>有馬山<br>猪名の笹原<br>風吹けば いでそよ人を 忘れやはする</h2><br>
         <h4><span>上の句</span><br>
-        <span class="spancolor"> ありまやま<br>いなのささはら かぜふけば</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> いでそよひとを わすれやはする</span></h4><br>
+          <span class="spancolor"> ありまやま<br>いなのささはら かぜふけば</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> いでそよひとを わすれやはする</span></h4><br>
 
         <div class="btn2" id="hide-text5">覚え方</div>
         <h1 id="text5">有馬山 いでよ！</h1><br>
@@ -899,23 +1151,25 @@
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
     </ons-page>
-  </ons-template> 
+  </ons-template>
 
-   <!-- 面白覚え札画面page_A7 -->
+  <!-- 面白覚え札画面page_A7 -->
 
-   <ons-template id="page_A7.html">
+  <ons-template id="page_A7.html">
     <ons-page id="A7-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page6</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page6</ons-back-button>
+        </div>
         <div class="center">page7</div>
       </ons-toolbar>
       <div class="content_A" style="text-align: center">
 
         <h2>かささぎの<br>渡せる橋に おく霜の<br>白きをみれば 夜ぞふけにける</h2><br>
         <h4><span>上の句</span><br>
-        <span class="spancolor"> かささぎの<br>わたせるはしに おくしもの</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> しろきをみれば よぞふけにける</span></h4><br>
+          <span class="spancolor"> かささぎの<br>わたせるはしに おくしもの</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> しろきをみれば よぞふけにける</span></h4><br>
 
         <div class="btn2" id="hide-text6">覚え方</div>
         <h1 id="text6">かささぎは 白い</h1><br>
@@ -924,23 +1178,25 @@
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
     </ons-page>
-  </ons-template> 
+  </ons-template>
 
-   <!-- 面白覚え札画面page_A8-->
+  <!-- 面白覚え札画面page_A8-->
 
-   <ons-template id="page_A8.html">
+  <ons-template id="page_A8.html">
     <ons-page id="A8-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>page7</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>page7</ons-back-button>
+        </div>
         <div class="center">page8</div>
       </ons-toolbar>
       <div class="content_A" style="text-align: center">
 
         <h2>玉の緒よ<br>たえなばたえねながらへば<br>忍ぶることの 弱りもぞする</h2><br>
         <h4><span>上の句</span><br>
-        <span class="spancolor"> たまのをよ<br>たえなばたえね ながらへば</span><br>
-        <span>下の句</span><br>
-        <span class="spancolor"> しのぶることの よわりもぞする</span></h4><br>
+          <span class="spancolor"> たまのをよ<br>たえなばたえね ながらへば</span><br>
+          <span>下の句</span><br>
+          <span class="spancolor"> しのぶることの よわりもぞする</span></h4><br>
 
         <div class="btn2" id="hide-text7">覚え方</div>
         <h1 id="text7">玉野 しのぶちゃん<br>
@@ -949,22 +1205,56 @@
         <ons-button id="pop-button">選択画面へ戻る</ons-button>
       </div>
     </ons-page>
-  </ons-template> 
+  </ons-template>
 
   <!-- クイズページの画面 -->
 
   <ons-template id="pageA.html">
     <ons-page id="A-page">
       <ons-toolbar>
-        <div class="left"><ons-back-button>トップページ</ons-back-button></div>
+        <div class="left">
+          <ons-back-button>トップページ</ons-back-button>
+        </div>
         <div class="center">ランダムクイズ</div>
       </ons-toolbar>
       <div class="content3" style="text-align: center">
 
-         <section class="container"> 
+        <section class="container">
           <p id="bang">問題 1</p>
+          <p class="p1" id="question"></p>
+          <!-- <div class="vertical"> -->
+            <ul id="choices"></ul>
+          <!-- </div> -->
+          <div id="btn" class="disabled">次の問題</div>
+          <section id="result" class="hidden">
+            <h1>結果は？？</h1>
+            <p class="p2"></p><br>
+            <h4></h4>
+            <br>
+            <ons-button id="pop-button0">トップページへ戻る</ons-button>
+          </section>
+        </section>
+
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <!-- //クイズ100問ページへ -->
+
+  <ons-template id="page_q1.html">
+    <ons-page id="q1-page">
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button>トップページ</ons-back-button>
+        </div>
+        <div class="center">100問クイズ</div>
+      </ons-toolbar>
+      <div class="content3" style="text-align: center">
+
+        <section class="container">
+          <p id="bang">問題 1</p>
+          <p class="p1" id="question"></p>
           <div class="vertical">
-            <p class="p1" id="question"></p>
             <ul id="choices"></ul>
           </div>
           <div id="btn" class="disabled">次の問題</div>
@@ -973,15 +1263,16 @@
             <p class="p2"></p><br>
             <h4></h4>
             <br>
-    
             <ons-button id="pop-button0">トップページへ戻る</ons-button>
           </section>
-        </section> 
+        </section>
       </div>
     </ons-page>
   </ons-template>
 
 
 
+
 </body>
+
 </html>
