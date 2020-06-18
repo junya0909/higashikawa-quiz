@@ -121,7 +121,7 @@ span {
 }
 
 #push-button_31 {
-  margin-top: 20px;
+  margin-top: 100px;
   margin-bottom: 8px;
   color: #000000;
   font-size: 32px;
@@ -486,10 +486,6 @@ span {
   height: 100%;
 }
 
-
-
-
-
 /* クイズ画面のCSSコード -------------------------------------*/
 
 #question {
@@ -509,7 +505,7 @@ span {
   border: 3px solid #279C56;
   border-radius: 4px;
   padding: 10px;
-  margin: 15px;
+  margin: 20px;
   cursor: pointer;
   font-family: 'HGP行書体';
   font-size: 18px;
@@ -560,8 +556,8 @@ span {
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 100px;
-  /* background-color: rgb(108, 255, 115);
-  height: 100%; */
+  /* background-color: rgb(108, 255, 115); */
+  height: 100%;
   border-radius: 4px;
   padding: 15px;
   position: relative;
@@ -620,10 +616,10 @@ span {
   margin-bottom: 10px;
 }
 
- /* .vertical {
-  writing-mode: vertical-rl;
-  margin:auto;
-} */
+  /* .vertical {
+    writing-mode: vertical-rl;
+    margin: 0 auto;
+  } */
 
 
 /* クイズページのresurt画面 ----------------------------------*/
@@ -661,48 +657,7 @@ span {
 
 
 
-.mycheckbox input[type="checkbox"]{
-  display: none;
-}
-/* チェックボックスの代わりを成すラベル */
-.mycheckbox input[type="checkbox"]+label{
-  display: none;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  padding-left: 25px;
-  padding-right: 10px;
-}
-/* ラベルの左に表示させる正方形のボックス□ */
-.mycheckbox input[type="checkbox"]+label::before{
-  content: "";
-  position: absolute;
-  display: block;
-  box-sizing: border-box;
-  width: 20px;
-  height: 20px;
-  margin-top: -10px;
-  left: 0;
-  top: 50%;
-  border: 1px solid;
-  border-color:  #585753; /* 枠の色変更 お好きな色を */
-  background-color: #FFF; /* 背景の色変更 お好きな色を */
-}
-/* チェックが入った時のレ点 */
-.mycheckbox input[type="checkbox"]:checked+label::after{
-  content: "";
-  position: absolute;
-  display: block;
-  box-sizing: border-box;
-  width: 18px;
-  height: 9px;
-  margin-top: -9px;
-  top: 50%;
-  left: 3px;
-  transform: rotate(-45deg);
-  border-bottom: 3px solid;
-  border-left: 3px solid;
-  border-color:  #585753; /* チェックの色変更 お好きな色を */
+
 
 
 

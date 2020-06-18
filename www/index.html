@@ -62,7 +62,7 @@
         const quizSet = shuffle([
 
           // 1
-          { q: "むらさめの つゆもまだひぬ まきのはに", c: ["ただありあけの つきぞのこれる", "きりたちのぼる あきのゆうぐれ", "ゆめのかよいぢ ひとめよくらむ", "しのぶることの よわりもぞする"] },
+          { q: "むらさめの つゆもまだひぬ まきのはに", c: ["ただありあけの つきぞのこれる" ,  "きりたちのぼる あきのゆうぐれ", "ゆめのかよいぢ ひとめよくらむ", "しのぶることの よわりもぞする"] },
           // 2
           { q: "すみのえの きしによるなみ よるさへや", c: ["われてもすゑ あはむとぞおもふ", "ゆめのかよいぢ ひとめよくらむ", "はげしかれとは いのらぬものよ", "いかにひさしき ものとかはしる"] },
           // 3
@@ -852,12 +852,22 @@
         <div class="left">
           <ons-back-button>ホーム</ons-back-button>
         </div>
-        <div class="center">Page 2</div>
+        <div class="center"></div>
       </ons-toolbar>
 
       <div class="content2" style="text-align: center">
         <p>一字決まりとは？？</p>
         <h3>一字決まりは、上の句の一文字目を聞けば、下の句を特定できる札だよ！<br>一字決まりは七首存在するんだ！<br>七首の上の句の一文字目を合わせて<br><span>むすめふさほせ</span>と覚えよう！</h3>
+
+        <form name="form">
+          
+            
+            
+           
+           
+          
+        </form>
+
         <ons-button id="push-button">次へ</ons-button>
         <ons-button id="pop-button">戻る</ons-button>
       </div>
@@ -871,7 +881,7 @@
     <ons-page id="third-page">
       <ons-toolbar>
         <div class="left">
-          <ons-back-button>page 2</ons-back-button>
+          <ons-back-button>Back</ons-back-button>
         </div>
         <div class="center">選択画面</div>
       </ons-toolbar>
@@ -881,39 +891,46 @@
         <div class="section">
           <ons-button id="push-button_31">八十七番 む</ons-button>
           <br>
-          <div class="mycheckbox">
-            <input id="sample1" value="1" type="checkbox" checked><label for="sample1">チェック1</label>
-        </div><br>
+          <label>
+            <input type="checkbox" name="test" value="TEST1" />TEST1
+          </label>
+          <br>
           <ons-button id="push-button_32">十八番 す</ons-button>
           <br>
-          <div class="mycheckbox">
-            <input id="sample1" value="1" type="checkbox" checked><label for="sample1">チェック1</label>
-        </div><br>
+          <label>
+            <input type="checkbox" name="test" value="TEST2"  />TEST2
+          </label>
+          <br>
           <ons-button id="push-button_33">五十七番 め</ons-button>
           <br>
-          <div class="mycheckbox">
-            <input id="sample1" value="1" type="checkbox" checked><label for="sample1">チェック1</label>
-        </div><br>
+          <label>
+            <input type="checkbox" name="test" value="TEST3" />TEST3
+          </label>
+          <br>
           <ons-button id="push-button_34">二十二番 ふ</ons-button>
           <br>
-          <div class="mycheckbox">
-            <input id="sample1" value="1" type="checkbox" checked><label for="sample1">チェック1</label>
-        </div><br>
+          <label>
+            <input type="checkbox" name="test" value="TEST4" />TEST4
+          </label>
+          <br>
           <ons-button id="push-button_35">七十番 さ</ons-button>
           <br>
-          <div class="mycheckbox">
-            <input id="sample1" value="1" type="checkbox" checked><label for="sample1">チェック1</label>
-        </div><br>
+          <label>
+            <input type="checkbox" name="test" value="TEST5" />TEST5
+          </label>
+          <br>
           <ons-button id="push-button_36">九十一番 ほ</ons-button>
           <br>
-          <div class="mycheckbox">
-            <input id="sample1" value="1" type="checkbox" checked><label for="sample1">チェック1</label>
-        </div><br>
+          <label>
+            <input type="checkbox" name="test" value="TEST6"/>TEST6
+          </label>
+          <br>
           <ons-button id="push-button_37">七十七番 せ</ons-button>
           <br>
-          <div class="mycheckbox">
-            <input id="sample1" value="1" type="checkbox" checked><label for="sample1">チェック1</label>
-        </div><br>
+          <label>
+            <input type="checkbox" name="test" value="TEST7"/>TEST7
+          </label>
+          <br>
           <ons-button id="pop-button" class="top-page">ホームへ戻る</ons-button>
         </div>
       </div>
@@ -926,9 +943,9 @@
     <ons-page id="four-page">
       <ons-toolbar>
         <div class="left">
-          <ons-back-button>page 3</ons-back-button>
+          <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">page 4</div>
+        <div class="center"></div>
       </ons-toolbar>
 
       <div class="content" style="text-align: center">
@@ -952,9 +969,9 @@
     <ons-page id="five-page">
       <ons-toolbar>
         <div class="left">
-          <ons-back-button>page 3</ons-back-button>
+          <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">page 5</div>
+        <div class="center"></div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
         <img class="fuda" src="img/すみのえの.PNG"><br>
@@ -976,9 +993,9 @@
     <ons-page id="six-page">
       <ons-toolbar>
         <div class="left">
-          <ons-back-button>page 3</ons-back-button>
+          <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">page 6</div>
+        <div class="center"></div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
         <img class="fuda" src="img/めぐりあひて.PNG"><br>
@@ -1000,9 +1017,9 @@
     <ons-page id="seven-page">
       <ons-toolbar>
         <div class="left">
-          <ons-back-button>page 3</ons-back-button>
+          <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">page 7</div>
+        <div class="center"></div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
         <img class="fuda" src="img/ふくからに.PNG"><br>
@@ -1024,9 +1041,9 @@
     <ons-page id="eight-page">
       <ons-toolbar>
         <div class="left">
-          <ons-back-button>page 3</ons-back-button>
+          <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">page 8</div>
+        <div class="center"></div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
         <img class="fuda" src="img/さびしさに.PNG"><br>
@@ -1048,9 +1065,9 @@
     <ons-page id="nine-page">
       <ons-toolbar>
         <div class="left">
-          <ons-back-button>page 3</ons-back-button>
+          <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">page 9</div>
+        <div class="center"></div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
         <img class="fuda" src="img/ほととぎす.PNG"><br>
@@ -1072,9 +1089,9 @@
     <ons-page id="ten-page">
       <ons-toolbar>
         <div class="left">
-          <ons-back-button>page 3</ons-back-button>
+          <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">page 10</div>
+        <div class="center"></div>
       </ons-toolbar>
       <div class="content" style="text-align: center">
         <img class="fuda" src="img/せをはやみ.PNG"><br>
@@ -1353,9 +1370,9 @@
         <section class="container">
           <p id="bang">問題 1</p>
           <p class="p1" id="question"></p>
-          <!-- <div class="vertical"> -->
+          <div class="vertical">
             <ul id="choices"></ul>
-          <!-- </div> -->
+          </div>
           <div id="btn" class="disabled">次の問題</div>
           <section id="result" class="hidden">
             <h1>結果は？？</h1>
