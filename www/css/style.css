@@ -115,13 +115,13 @@ span {
 /* 一字決まり札 page3 */
 
 .content0 {
-  background-image: url(../img/竹３.jpg);
-  height: 150%;
+  background-image: url(../img/お花１.jpg);
+  height: 105%;
   background-size: cover;
 }
 
 #push-button_31 {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 8px;
   color: #000000;
   font-size: 32px;
@@ -196,7 +196,7 @@ span {
 /* 一字決まり札 page4~9.htmlのCSS ーーーーーーーーーーーーーー*/
 
 .content {
-  background-image: url(../img/背景４.jpg);
+  background-image: url(../img/背景５.jpg);
   background-size: cover;
 }
 
@@ -214,16 +214,19 @@ span {
 .content h1 {
   font-family: 'HGP行書体';
   font-size: 32px;
+  font-weight: 900;
 }
 
 .content h2 {
   font-family: 'HGP行書体';
   font-size: 32px;
   color:black;
+  font-weight: 900;
 }
 
 .content h4 {
   margin: 0px;
+  font-weight: 900;
 }
 
 /* span {
@@ -236,12 +239,13 @@ span {
   color:black;
   padding: 0;
   font-size: 30px;
+  font-weight: 900;
 }
 
 /* 面白覚え札 page_A0のCSS */
 
 #push-button_A1 {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 8px;
   color: #000000;
   font-size: 32px;
@@ -322,18 +326,26 @@ span {
 
 /* 面白い覚え札 page_A1～A8のCSS----------------------------- */
 
-.content_A {
-  background-image: url(../img/背景４.jpg);
+/* .content_A {
+  background-image: url(../img/背景５.jpg);
   background-size: cover;
 }
+
+.content_A h1 {
+  font-family: 'HGP行書体';
+  font-size: 32px;
+  font-weight: 900;
+}
+
 
 .content_A > h2 {
   color:black;
   font-size: 30px;
+  font-weight: 900;
   padding-top: 100px;
   font-family:  'HGP行書体';
   margin: 0px;
-}
+} */
 
 
 /* jQuery -----------------------------------------------------*/
@@ -362,6 +374,7 @@ span {
   font-family:  'HGP行書体';
   color: red;
   font-size: 32px;
+  font-weight: 900;
   padding: 10px;
   margin: 0px;
   margin-top: 10px;
@@ -373,6 +386,7 @@ span {
   font-family:  'HGP行書体';
   color: red;
   font-size: 32px;
+  font-weight: 900;
   padding: 10px;
   margin: 0px;
   margin-top: 10px;
@@ -384,6 +398,7 @@ span {
   font-family:  'HGP行書体';
   color: red;
   font-size: 32px;
+  font-weight: 900;
   padding: 10px;
   margin: 0px;
   margin-top: 10px;
@@ -395,6 +410,7 @@ span {
   font-family:  'HGP行書体';
   color: red;
   font-size: 32px;
+  font-weight: 900;
   padding: 10px;
   margin: 0px;
   margin-top: 10px;
@@ -406,6 +422,7 @@ span {
   font-family:  'HGP行書体';
   color: red;
   font-size: 32px;
+  font-weight: 900;
   padding: 10px;
   margin: 0px;
   margin-top: 10px;
@@ -417,6 +434,7 @@ span {
   font-family:  'HGP行書体';
   color: red;
   font-size: 32px;
+  font-weight: 900;
   padding: 10px;
   margin: 0px;
   margin-top: 10px;
@@ -428,6 +446,7 @@ span {
   font-family:  'HGP行書体';
   color: red;
   font-size: 32px;
+  font-weight: 900;
   padding: 10px;
   margin: 0px;
   margin-top: 10px;
@@ -439,6 +458,7 @@ span {
   font-family:  'HGP行書体';
   color: red;
   font-size: 32px;
+  font-weight: 900;
   padding: 10px;
   margin: 0px;
   margin-top: 10px;
@@ -446,35 +466,161 @@ span {
 
 #hide-text {
   font-size: 24px;
+  font-weight: 900;
 }
 
 #hide-text1 {
   font-size: 24px;
+  font-weight: 900;
 }
 
 #hide-text2 {
   font-size: 24px;
+  font-weight: 900;
 }
 
 #hide-text3 {
   font-size: 24px;
+  font-weight: 900;
 }
 
 #hide-text4 {
   font-size: 24px;
+  font-weight: 900;
 }
 
 #hide-text5 {
   font-size: 24px;
+  font-weight: 900;
 }
 
 #hide-text6 {
   font-size: 24px;
+  font-weight: 900;
 }
 
 #hide-text7 {
   font-size: 24px;
-  
+  font-weight: 900;
+}
+
+#textA {
+  display:none;
+  background: #fff;
+  font-family:  'HGP行書体';
+  color: red;
+  font-size: 32px;
+  font-weight: 900;
+  padding: 10px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+#textB {
+  display: none;
+  background: #fff;
+  font-family:  'HGP行書体';
+  color: red;
+  font-size: 32px;
+  font-weight: 900;
+  padding: 10px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+#textC {
+  display: none;
+  background: #fff;
+  font-family:  'HGP行書体';
+  color: red;
+  font-size: 32px;
+  font-weight: 900;
+  padding: 10px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+#textD {
+  display: none;
+  background: #fff;
+  font-family:  'HGP行書体';
+  color: red;
+  font-size: 32px;
+  font-weight: 900;
+  padding: 10px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+#textE {
+  display: none;
+  background: #fff;
+  font-family:  'HGP行書体';
+  color: red;
+  font-size: 32px;
+  font-weight: 900;
+  padding: 10px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+#textF {
+  display: none;
+  background: #fff;
+  font-family:  'HGP行書体';
+  color: red;
+  font-size: 32px;
+  font-weight: 900;
+  padding: 10px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+#textG {
+  display: none;
+  background: #fff;
+  font-family:  'HGP行書体';
+  color: red;
+  font-size: 32px;
+  font-weight: 900;
+  padding: 10px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+#hide-textA {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+#hide-textB {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+#hide-textC {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+#hide-textD {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+#hide-textE {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+#hide-textF {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+#hide-textG {
+  font-size: 24px;
+  font-weight: 900;
 }
 
 
