@@ -164,13 +164,13 @@
             bango++;         //////////////////
           }
 
-          bangWord.textContent = `問題 ${bango}`;  /////////////
+          bangWord.textContent = `第${bango}問`;  /////////////
 
           if (score === quizSet.length) {
             scoreWord.innerText = "全問正解だ！！\nおめでとう！！";
           } else if ((score >= quizSet.length - 5) && (score < quizSet.length)) {
             scoreWord.innerText = "もう一歩だね！！";
-          } else if ((score >= quizSet.length - 8) && (score < quizSet.length - 5)) {
+          } else if ((score >= quizSet.length - 10) && (score < quizSet.length - 5)) {
             scoreWord.textContent = "なかなかだね！！";
           } else {
             scoreWord.innerText = "もう一回\n覚えなおそう！";
@@ -811,7 +811,7 @@
             bango++;         //////////////////
           }
 
-          bangWord.textContent = `問題 ${bango}`;  /////////////
+          bangWord.textContent = `第${bango}問`;  /////////////
 
           if (score === quizSet.length) {
             scoreWord.textContent = "もう君は百人一首マスターだ！！";
@@ -1216,7 +1216,7 @@
     <ons-page id="A1-page">
       <ons-toolbar>
         <div class="left">
-          <ons-back-button>ホーム</ons-back-button>
+          <ons-back-button>Back</ons-back-button>
         </div>
         <div class="center"></div>
       </ons-toolbar>
@@ -1456,7 +1456,7 @@
       <div class="content3" style="text-align: center">
 
         <section class="container">
-          <p id="bang">問題 1</p>
+          <p id="bang">第１問</p>
           <p class="p1" id="question"></p>
           <!-- <br> -->
           <!-- <div class="vertical"> -->
@@ -1489,7 +1489,7 @@
       <div class="content3" style="text-align: center">
 
         <section class="container">
-          <p id="bang">問題 1</p>
+          <p id="bang">第１問</p>
           <p class="p1" id="question"></p>
           <div class="vertical">
             <ul id="choices"></ul>
